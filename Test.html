@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+
+    </body>
+</html>
+<script>
+    var data = null;
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            console.log(this.responseText);
+        }
+    });
+
+    xhr.open("GET", "https://api.data.world/v0/queries/c0af8b35-2a41-43b2-8e87-191578ac8d43/results");
+    xhr.setRequestHeader("authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcm9kLXVzZXItY2xpZW50OnpkaWV0ejI4IiwiaXNzIjoiYWdlbnQ6emRpZXR6Mjg6Ojk4YTNkZDY0LWJlMzAtNDczMi04NDZlLTFkNGNkYWNhYmIzZCIsImlhdCI6MTYwMTc0MDk4Nywicm9sZSI6WyJ1c2VyX2FwaV9yZWFkIiwidXNlcl9hcGlfd3JpdGUiXSwiZ2VuZXJhbC1wdXJwb3NlIjp0cnVlLCJzYW1sIjp7fX0.-FozIilkZ9bNshUIq-uDUgL_2nNNhnerKE2bJEdqz47yka0w1hxlFqyN3wPoJlMWsqQNMrmRNRilkXj5iBbdGQ");
+
+    xhr.send(data);
+</script>
